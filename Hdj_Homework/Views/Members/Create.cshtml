@@ -1,0 +1,44 @@
+﻿@model Hdj_Homework.Models.Member
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Member</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input name="Name" asp-for="Name" class="form-control" />
+                <span name="messageName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input name="Email" asp-for="Email" class="form-control" />
+                <span name="messageEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phone" class="control-label"></label>
+                <input name="Phone" asp-for="Phone" class="form-control" />
+                <span name="messagePhone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input name="Submit" type="button" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    <script src="~/js/site.js"></script>
+    @*@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}*@
+}
